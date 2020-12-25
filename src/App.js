@@ -44,7 +44,9 @@ const getSearch = e => {
 
   return (
     <div className="App">
-      {/* */}
+      <div className="header">
+        <h1>Meal Time</h1>
+      </div>
       <form  onSubmit={getSearch}className="search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type = "submit">Search</button>
