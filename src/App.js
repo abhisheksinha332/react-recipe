@@ -44,19 +44,29 @@ const getSearch = e => {
 
   return (
     <div className="App">
-      <h3>Search Results for "{query}"</h3>
+      {/* */}
       <form  onSubmit={getSearch}className="search-form">
         <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type = "submit">Search</button>
       </form>
+      <div className="msg">
+      <h3>Search Results for "{query}"</h3>
+      </div>
+      
+      <div className="rec">
+
       {recipes.map(recipe => (
         <Recipe 
         key={recipe.recipe.label}
         title={recipe.recipe.label}
         calories={recipe.recipe.calories} 
         image={recipe.recipe.image} 
-        />
+        ingredients={recipe.recipe.ingredients}
+        food={recipe.recipe.ingredientLines} />
+        
       ))}
+      </div>
+     
     </div>
   );
 }
